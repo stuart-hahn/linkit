@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get 'callbacks/github'
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   
