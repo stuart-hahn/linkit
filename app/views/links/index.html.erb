@@ -1,6 +1,11 @@
-<h1>Links Index</h1>
+<% if @category %>
+    <h1><%= @category.title %> Index</h1>
+    <%= link_to 'Add a new ' + @category.title + ' link', new_category_link_path(@category) %>
+<% else %>
+    <h1>Links Index</h1>
+    <%= link_to 'Add a new link', new_link_path %>
+<% end %>
 
-<%= link_to 'Add a new link', new_category_link_path(@category) if @category %>
 
 <ul>
 <% @links.each do |link| %>
