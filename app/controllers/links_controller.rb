@@ -1,7 +1,12 @@
 class LinksController < ApplicationController
     before_action :set_link, only: [:edit, :update, :show, :destroy]
     def new
-        @link = Link.new
+        if params[:category_id] && @category = Category.find_by(id: params[:category_id])
+            @link = @category.links.build
+        else
+            flash.now[:alert] = "That Category doesn't exist" if params[:category_id]
+            @link = Link.new
+        end
     end
 
     def create

@@ -1,5 +1,7 @@
 <h1>Links Index</h1>
 
+<%= link_to 'Add a new link', new_category_link_path(@category) if @category %>
+
 <ul>
 <% @links.each do |link| %>
     <li><%= link_to link.title, link_path(link) %></li>

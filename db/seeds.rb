@@ -9,4 +9,7 @@
 u = User.first
 
 c = u.categories.create(title: "Gaming")
+p = u.categories.create(title: "Productivity")
+
 l = u.links.create(title: "Youtube", url: "https://www.youtube.com/", category: c)
+n = u.links.create(title: "Google", url: "https://www.google.com/", category: p)
