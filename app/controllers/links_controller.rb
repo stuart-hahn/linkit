@@ -24,7 +24,7 @@ class LinksController < ApplicationController
     end
 
     def index
-        if params[:category_id] && @category = Category.find_by(id: params[:id])
+        if params[:category_id] && @category = Category.find_by(id: params[:category_id])
             @links = @category.links
         else
             flash.now[:alert] = "That Category doesn't exist" if params[:category_id]
